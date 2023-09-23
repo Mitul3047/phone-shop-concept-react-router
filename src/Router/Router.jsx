@@ -3,6 +3,8 @@ import MainLayout from "../Layout/mainLayout";
 import Home from "../Pages/Home/Home";
 import Favorites from "../Pages/Favorites/Favorites";
 import LogIn from "../Pages/LogIn/LogIn";
+import ShowDetails from "../Pages/ShowDetails/ShowDetails";
+import ErrorPages from "../Pages/Errorpages/ErrorPages";
 
 
 
@@ -10,6 +12,7 @@ const Router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement:<ErrorPages></ErrorPages>,
         children: [
             {
                 path:'/',
@@ -23,7 +26,11 @@ const Router = createBrowserRouter([
             {
                 path: '/login',
                 element:<LogIn></LogIn>
-            } 
+            },
+            {
+                path: '/phones/:id',
+                element:<ShowDetails></ShowDetails>
+            }
         ]
     }
 ])
